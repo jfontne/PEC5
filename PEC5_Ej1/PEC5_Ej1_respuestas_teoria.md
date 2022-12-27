@@ -12,10 +12,10 @@
 
 # c) ¿Qué son, cuáles son y para qué sirven los estados en los formularios dirigidos por templates?
 
-* required: Se le proporciona a un campo para que sea obligatorio su completado
-* minlength: Obliga a que el campo tenga un mínimo de caracteres.
-* maxlength: Obliga a que el campo tenga un máximo de caracteres.
-* '<div *ngIf="name.errors?.required">': si name contiene errores, en este caso, si hay error porque es requerido y está vacío. Cuando no hay errores, errors es null, de ahí el ?.
+* required: El campo és obligatorio.
+* minlength: El campo ha de tener un mínimo de caracteres.
+* maxlength: El campo ha de tener un máximo de caracteres.
+* '<div *ngIf="name.errors?.required">': si name contiene errores, en este caso, si 
 * pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$": patrón que debe serguir un input para que no de error en cada pulsación. En este caso se trata de un patrón para emails.
 
 # d) ¿Qué ventajas aportan los FormGroup en la composición de formularios?

@@ -5,7 +5,6 @@ export class ValidacionsPropies {
     static NameWineValidator(control:FormControl): ValidationErrors|null{
         let vins: Array<string>;
         vins = ['Laya', 'K-Naina', 'Verdejo', 'Monastrell'];
-        console.log(control.value);
         return vins.some(vi => vi === control.value)?  null : {NoEstaEnLaLlista: true};
       }
 }
