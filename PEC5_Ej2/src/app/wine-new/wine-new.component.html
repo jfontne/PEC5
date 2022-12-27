@@ -1,0 +1,72 @@
+<h2>Crear formulario de vinos</h2>
+
+<div class="form-group">
+  <form (ngSubmit)="createWine(wineForm)" #wineForm="ngForm" >
+    <div ngModelGroup="wine">
+        <div class="entrada">
+            <div class="etiqueta"><label for="nombre">Nombre vino</label></div>
+            <div class="quadreText">
+                <input type="text"
+                    id="nombre"
+                    placeholder="Nombre vino"
+                    required
+                    name="nombre"
+                    #ctrlName = "ngModel"
+                    ngModel>
+            </div>
+            <div class="error" *ngIf="ctrlName.invalid && ctrlName.dirty">
+                Nombre obligatorio
+            </div>
+        </div>
+        
+        <div class="entrada">
+            <div class="etiqueta"><label for="precio">Precio</label></div>
+            <div class="quadreText">
+                <input type="number"
+                    id="precio"
+                    placeholder="Precio"
+                    required
+                    name="precio"
+                    #ctrlPrecio = "ngModel"
+                    ngModel>
+                </div>
+                <div class="error" *ngIf="ctrlPrecio.invalid && ctrlPrecio.dirty">
+                    Precio obligatorio
+                </div>
+        </div>
+            
+        <div class="entrada">
+            <div class="etiqueta"><label for="URLimagen">URL imagen</label></div>
+            <div class="quadreText">
+                <input type="url"
+                id="URLimagen"
+                placeholder="URL imagen"
+                required
+                name="URLimagen"
+                #ctrlImagen = "ngModel"
+                ngModel>
+            </div>
+                <div class="error" *ngIf="ctrlImagen.invalid && ctrlImagen.dirty">
+                URL imagen obligatoria
+                </div>
+
+                <div class="error" *ngIf="!urlValidar(ctrlImagen.value) && ctrlImagen.dirty">
+                    URL no vàlida
+                </div>
+        </div>
+        
+        <div class="entrada">
+            <div class="etiqueta"><label for="enVenta">En venta</label></div>
+            <div class="casellaVerificacio">
+                <input type="checkbox"
+                    value="true"
+                    id="enVenta"
+                placeholder="false"
+                name="enVenta"
+                ngModel>
+            </div>
+        </div>
+    </div>
+    <div class="entrada"><button type="submit">creación</button></div>
+  </form>
+</div>
