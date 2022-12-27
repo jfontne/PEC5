@@ -11,7 +11,7 @@
 | email | Control de email, sólo acepta formatos correctos de email |
 | minLength(minLength: number) | Definir el mínimo de carácteres de un control |
 | maxLength(maxLength: number) | Definir el máximo de carácteres de un control |
-| pattern(pattern: string | RegExp) | Definir un RegExp o expresión para comprovar que la entrada sigue unas normativas establecidas |
+| pattern(pattern: string \| RegExp) | Definir un RegExp o expresión para comprovar que la entrada sigue unas normativas establecidas |
 | nullValidator | 
 | compose(validators: ValidatorFn[]) |
 | composeAsync(validators: AsyncValidatorFn[]) |
