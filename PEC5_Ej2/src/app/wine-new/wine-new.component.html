@@ -42,15 +42,15 @@
                 id="URLimagen"
                 placeholder="URL imagen"
                 required
+                pattern="^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$"
                 name="URLimagen"
                 #ctrlImagen = "ngModel"
                 ngModel>
             </div>
-                <div class="error" *ngIf="ctrlImagen.invalid && ctrlImagen.dirty">
-                URL imagen obligatoria
+                <div class="error" *ngIf="ctrlImagen.hasError('required') && ctrlImagen.dirty">
+                    URL imagen obligatoria
                 </div>
-
-                <div class="error" *ngIf="!urlValidar(ctrlImagen.value) && ctrlImagen.dirty">
+                <div class="error" *ngIf="ctrlImagen.hasError('pattern') && ctrlImagen.dirty">
                     URL no vàlida
                 </div>
         </div>
@@ -67,6 +67,6 @@
             </div>
         </div>
     </div>
-    <div class="entrada"><button type="submit">creación</button></div>
+    <div class="entrada"><button [disabled]="wineForm.invalid" type="submit">creación</button></div>
   </form>
 </div>
